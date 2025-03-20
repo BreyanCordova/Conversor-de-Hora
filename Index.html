@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Hora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Conversor de Hora</h2>
+        <p class="loading">Detectando tu ubicación...</p>
+
+        <label>Hora para conversión:</label>
+        <div class="time-inputs">
+            <input type="number" id="hora" placeholder="HH" min="1" max="12">
+        </div>
+
+        <div class="switch-container">
+            <span>Formato: 12h | 24h</span>
+            <label class="switch">
+                <input type="checkbox" id="switchFormato" onchange="actualizarRangoHora()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <label>Zona horaria para conversión:</label>
+        <select id="zona">
+            <option value="-3">GMT-3</option>
+            <option value="-4">GMT-4</option>
+            <option value="-5">GMT-5</option>
+            <option value="-6">GMT-6</option>
+            <option value="-7">GMT-7</option>
+            <option value="-8">GMT-8</option>
+        </select>
+
+        <button onclick="convertirHora()">Convertir Hora</button>
+        <button class="btn-clear" onclick="limpiarCampos()">Limpiar</button>
+
+        <p class="resultado" id="resLabel">Hora en tu país:</p>
+        <p class="resultado"><b>Formato 24h:</b> <span id="resultado24">--:--</span></p>
+        <p class="resultado"><b>Formato 12h:</b> <span id="resultado12">--:--</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
